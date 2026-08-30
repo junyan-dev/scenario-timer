@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SleepTimer" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/system_blue</item>
+        <item name="colorPrimaryVariant">@color/system_blue</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/system_blue</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:windowBackground">@drawable/bg_main</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:textColorPrimary">@color/label_primary</item>
+        <item name="android:textColorSecondary">@color/label_secondary</item>
+        <item name="materialButtonStyle">@style/SleepTimer.Button</item>
+    </style>
+
+    <style name="SleepTimer.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="backgroundTint">@color/system_blue</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">17sp</item>
+        <item name="elevation">0dp</item>
+    </style>
+</resources>

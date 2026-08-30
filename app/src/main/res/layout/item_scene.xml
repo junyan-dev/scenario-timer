@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sceneItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="52dp"
+    android:background="@android:color/transparent">
+
+    <!-- 左滑露出的操作按钮（启动/编辑/删除） -->
+    <LinearLayout
+        android:id="@+id/swipeBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end|center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/btnSceneStart"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_play"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#3A9D52"
+            android:scaleType="centerInside"
+            android:contentDescription="启动" />
+
+        <ImageButton
+            android:id="@+id/btnSceneEdit"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_edit"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#5B9BD5"
+            android:scaleType="centerInside"
+            android:contentDescription="编辑" />
+
+        <ImageButton
+            android:id="@+id/btnSceneDelete"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#FF3B30"
+            android:scaleType="centerInside"
+            android:contentDescription="删除" />
+    </LinearLayout>
+
+    <!-- 前景卡片（可左右滑动） -->
+    <LinearLayout
+        android:id="@+id/swipeForeground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="8dp"
+        android:background="@color/card_background"
+        android:foreground="?attr/selectableItemBackground">
+
+        <View
+            android:id="@+id/colorBar"
+            android:layout_width="4dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/color_pill" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvItemSceneName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/label_primary"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tvSceneTimerStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/label_secondary"
+                android:layout_marginTop="1dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!-- 时长（无计时器时显示）/ 剩余时间（运行时显示） -->
+        <TextView
+            android:id="@+id/tvItemSceneDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="@color/label_secondary"
+            android:fontFeatureSettings="tnum"
+            android:layout_marginStart="12dp" />
+
+        <!-- 计时器运行时的暂停/取消按钮（iOS 圆形 tinted 风格） -->
+        <ImageButton
+            android:id="@+id/btnScenePause"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="10dp"
+            android:padding="7dp"
+            android:src="@drawable/ic_pause"
+            android:background="@drawable/circle_blue_tint"
+            android:tint="@color/system_blue"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            android:contentDescription="暂停" />
+
+        <ImageButton
+            android:id="@+id/btnSceneCancel"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:padding="7dp"
+            android:src="@drawable/ic_stop"
+            android:background="@drawable/circle_red_tint"
+            android:tint="@color/system_red"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            android:contentDescription="取消" />
+
+    </LinearLayout>
+</FrameLayout>

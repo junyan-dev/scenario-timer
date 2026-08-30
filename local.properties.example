@@ -1,0 +1,7 @@
+## Copy this file to local.properties and fill in your signing credentials
+## cp local.properties.example local.properties
+
+STORE_FILE=sleeptimer.jks
+STORE_PASSWORD=your_store_password
+KEY_ALIAS=your_key_alias
+KEY_PASSWORD=your_key_password

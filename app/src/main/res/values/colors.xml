@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Apple HIG colors -->
+    <color name="colorPrimary">#007AFF</color>
+    <color name="colorPrimaryDark">#F2F2F7</color>
+    <color name="colorAccent">#007AFF</color>
+
+    <color name="system_blue">#007AFF</color>
+    <color name="system_red">#FF3B30</color>
+    <color name="system_green">#34C759</color>
+    <color name="system_background">#F2F2F7</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="label_primary">#1C1C1E</color>
+    <color name="label_secondary">#8E8E93</color>
+    <color name="label_tertiary">#AEAEB2</color>
+    <color name="separator">#C6C6C8</color>
+    <color name="fill_secondary">#E5E5EA</color>
+    <color name="chip_default_background">#E5E5EA</color>
+    <color name="warning">#FF9500</color>
+    <color name="scene_selected_background">#EFF2FB</color>
+    <color name="icon_background">#FFFFFF</color>
+</resources>

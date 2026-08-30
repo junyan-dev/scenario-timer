@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">到点</string>
+    <string name="accessibility_description">睡眠定时器需要设备管理员权限来实现定时息屏功能。</string>
+    <string name="accessibility_not_enabled">请先激活设备管理员权限（用于息屏）</string>
+    <string name="go_to_settings">激活权限</string>
+    <string name="battery_optimization_hint">建议关闭电池优化，确保定时器后台可靠运行</string>
+    <string name="btn_start">开始计时</string>
+    <string name="btn_cancel">取消计时</string>
+    <string name="hint_custom_minutes">自定义（分钟）</string>
+    <string name="timer_running">定时器运行中</string>
+    <string name="timer_remaining">剩余 %s</string>
+    <string name="notification_channel">睡眠定时器</string>
+</resources>

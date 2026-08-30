@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="32dp">
+
+            <!-- Timer Display（等宽数字，避免跳动） -->
+            <TextView
+                android:id="@+id/tvTimerDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30:00"
+                android:textSize="76sp"
+                android:textColor="@color/label_primary"
+                android:fontFamily="sans-serif-thin"
+                android:fontFeatureSettings="tnum"
+                android:letterSpacing="0.02"
+                android:includeFontPadding="false" />
+
+            <!-- Selected scene name -->
+            <TextView
+                android:id="@+id/tvSelectedScene"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="睡前"
+                android:textSize="15sp"
+                android:textColor="@color/system_blue"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.02"
+                android:layout_marginTop="4dp" />
+
+            <!-- Scene list card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="12dp">
+
+                    <!-- Scene items container -->
+                    <LinearLayout
+                        android:id="@+id/sceneContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <!-- Add scene button -->
+                    <TextView
+                        android:id="@+id/btnAddScene"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="+"
+                        android:textSize="24sp"
+                        android:textColor="@color/label_tertiary"
+                        android:gravity="center"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
