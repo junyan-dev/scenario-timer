@@ -1,8 +1,8 @@
-# Phone Timer - 项目笔记
+# 到点 (scenario-timer)
 
 ## 项目概述
 
-Android 睡眠定时器应用，支持场景化管理多个预设定时器。
+「到点」——按场景预设的计时器，到点“或静或响”。
 
 - 包名: `dev.junyan.scenariotimer`
 - 技术栈: Kotlin + View Binding + Foreground Service + AlarmManager
@@ -20,9 +20,8 @@ Android 睡眠定时器应用，支持场景化管理多个预设定时器。
 | 脚本 | 用途 |
 |---|---|
 | `start-emulator.sh` | 启动 Android 模拟器 |
-| `install-apk.sh` | 精简安装（APK 不存在才构建） |
 | `install.sh` | 完整安装（SDK 检测 + 多设备选择 + 条件构建） |
-| `build.sh` | 清理 + 重新构建 + 安装 + 启动 |
+| `package-apk.sh` | 打包 release APK 并自动小版本升级 |
 | `test-ui.sh` | adb + python3 自动化 UI 测试（11 项） |
 
 ## UI 自动化测试
@@ -65,8 +64,3 @@ private fun tintBackground(color: Int, alpha: Float): Int {
     return Color.argb(255, r, g, b)
 }
 ```
-
-## 分支说明
-
-- `master`: 稳定版本
-- `scenario-timer`: 场景化定时器开发分支
