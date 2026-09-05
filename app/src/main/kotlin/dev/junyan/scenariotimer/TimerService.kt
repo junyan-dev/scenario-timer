@@ -67,6 +67,8 @@ class TimerService : Service() {
     private val tickRunnables = mutableMapOf<Int, Runnable>()
     private var wakeLock: PowerManager.WakeLock? = null
     private var mediaPlayer: android.media.MediaPlayer? = null
+    private val ringtoneStopHandler = android.os.Handler(android.os.Looper.getMainLooper())
+    private val stopRingtoneRunnable = Runnable { stopRingtone() }
     private var nextTimerId = 1
     private var lastNotificationText: String = ""
 
@@ -387,16 +389,19 @@ class TimerService : Service() {
                 setAudioStreamType(android.media.AudioManager.STREAM_ALARM)
                 setDataSource(this@TimerService, uri)
                 isLooping = true
-                setOnCompletionListener { release(); mediaPlayer = null }
                 prepare()
                 start()
             }
+            // 循环响 1 分钟后自动停止，避免无人处理时一直响
+            ringtoneStopHandler.removeCallbacks(stopRingtoneRunnable)
+            ringtoneStopHandler.postDelayed(stopRingtoneRunnable, 60_000L)
         } catch (e: Exception) {
             Log.e(TAG, "playRingtone failed: ${e.message}", e)
         }
     }
 
     private fun stopRingtone() {
+        ringtoneStopHandler.removeCallbacks(stopRingtoneRunnable)
         val mp = mediaPlayer
         mediaPlayer = null
         try {
@@ -406,6 +411,7 @@ class TimerService : Service() {
     }
 
     override fun onDestroy() {
+        ringtoneStopHandler.removeCallbacks(stopRingtoneRunnable)
         timerMap.keys.toList().forEach { stopTick(it) }
         mediaPlayer?.apply { if (isPlaying) stop(); release() }
         mediaPlayer = null
