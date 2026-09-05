@@ -258,8 +258,9 @@ class TimerService : Service() {
     private fun maybeStop() {
         if (timerMap.isEmpty()) {
             handler.postDelayed({
-                if (timerMap.isEmpty()) {
-                    stopRingtone()
+                // 铃声还在响时不能停服务，否则铃声被掐断；
+                // 服务由 stopRingtone() 收尾时再尝试停止
+                if (timerMap.isEmpty() && mediaPlayer?.isPlaying != true) {
                     releaseWakeLock()
                     stopForeground(STOP_FOREGROUND_REMOVE)
                     stopSelf()
@@ -408,6 +409,8 @@ class TimerService : Service() {
             mp?.apply { if (isPlaying) stop(); release() }
         } catch (_: IllegalStateException) {}
         Log.i(TAG, "Ringtone stopped")
+        // 铃声结束后（手动或 1 分钟自动）再尝试停服务
+        maybeStop()
     }
 
     override fun onDestroy() {
