@@ -18,8 +18,8 @@ android {
         applicationId = "dev.junyan.scenariotimer"
         minSdk = 28
         targetSdk = 34
-        versionCode = 11115
-        versionName = "1.0.4"
+        versionCode = 11116
+        versionName = "1.0.5"
     }
 
     signingConfigs {
