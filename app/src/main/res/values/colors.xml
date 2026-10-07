@@ -18,5 +18,5 @@
     <color name="chip_default_background">#E5E5EA</color>
     <color name="warning">#FF9500</color>
     <color name="scene_selected_background">#EFF2FB</color>
-    <color name="icon_background">#FFFFFF</color>
+    <color name="icon_background">#E8604C</color>
 </resources>

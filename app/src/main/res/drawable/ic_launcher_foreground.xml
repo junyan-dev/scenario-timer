@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 表盘圆环 -->
+    <path
+        android:pathData="M54,29 A25,25 0 1 1 53.99,29"
+        android:strokeWidth="4.5"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- 指针指向 12 点（到点） -->
+    <path
+        android:pathData="M54,61 L54,36.5"
+        android:strokeWidth="5"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- 中心圆点 -->
+    <path
+        android:pathData="M54,50.8 A3.2,3.2 0 1 0 54.01,50.8 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- 3 点刻度 -->
+    <path
+        android:pathData="M71.5,54 L74.5,54"
+        android:strokeWidth="3.5"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- 6 点刻度 -->
+    <path
+        android:pathData="M54,71.5 L54,74.5"
+        android:strokeWidth="3.5"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- 9 点刻度 -->
+    <path
+        android:pathData="M36.5,54 L33.5,54"
+        android:strokeWidth="3.5"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+</vector>
